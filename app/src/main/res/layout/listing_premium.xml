@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/ivProperty"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/image_height_premium"
+        tools:background="@android:color/black" />
+
+    <View
+        android:id="@+id/viewBg"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:background="#1d394a"
+        app:layout_constraintBottom_toBottomOf="@id/ivProperty"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivAgent"
+        android:layout_width="@dimen/image_agent"
+        android:layout_height="@dimen/image_agent"
+        app:layout_constraintBottom_toBottomOf="@id/ivProperty"
+        app:layout_constraintLeft_toLeftOf="parent"
+        tools:background="@android:color/white" />
+
+    <TextView
+        android:id="@+id/tvAgent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:textColor="@android:color/white"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@id/ivProperty"
+        app:layout_constraintLeft_toRightOf="@id/ivAgent"
+        tools:text="Anika Wood" />
+
+    <TextView
+        android:id="@+id/tvPrice"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="@dimen/listing_right_padding"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="@dimen/listing_right_padding"
+        android:layout_marginStart="8dp"
+        android:gravity="end"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@id/ivProperty"
+        app:layout_constraintLeft_toRightOf="@id/tvAgent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:text="$50000" />
+
+    <TextView
+        android:id="@+id/tvLocation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="@dimen/listing_right_padding"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="@dimen/listing_right_padding"
+        android:layout_marginStart="10dp"
+        android:gravity="end|bottom"
+        android:textColor="@color/white"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toTopOf="@id/viewBg"
+        app:layout_constraintLeft_toRightOf="@id/ivAgent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:text="GO1/36 Romsey Street\n Waitra" />
+
+    <au.com.sentia.test.widgets.IconicTextView
+        android:id="@+id/tvProperty"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="1dp"
+        android:background="@drawable/premium_bottom_bg"
+        android:gravity="start|center_vertical"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/viewBg"
+        tools:text="2 Bedroom" />
+
+    <au.com.sentia.test.widgets.IconicTextView
+        android:id="@+id/tvStar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/listing_right_padding"
+        android:layout_marginRight="@dimen/listing_right_padding"
+        android:layout_marginTop="12dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/viewBg"
+        tools:text="1star" />
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/premium_bottom_bg"
+    android:paddingBottom="18dp">
+
+    <ImageView
+        android:id="@+id/ivProperty"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/image_height_premium"
+        tools:background="@android:color/black" />
+
+    <ImageView
+        android:id="@+id/ivAgent"
+        android:layout_width="@dimen/image_agent"
+        android:layout_height="@dimen/image_agent"
+        android:layout_marginTop="@dimen/image_agent_normal_top_margin"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:background="@android:color/white" />
+
+    <TextView
+        android:id="@+id/tvAgent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/listing_right_padding"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="@dimen/listing_right_padding"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:gravity="end"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivAgent"
+        tools:text="Anika Wood" />
+
+    <TextView
+        android:id="@+id/tvProperty"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="@dimen/listing_right_padding"
+        android:layout_marginLeft="@dimen/list_left_padding"
+        android:layout_marginRight="@dimen/listing_right_padding"
+        android:layout_marginStart="@dimen/list_left_padding"
+        android:gravity="start"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/tvAgent"
+        app:layout_constraintTop_toBottomOf="@id/ivProperty"
+        tools:text="$50000" />
+
+    <au.com.sentia.test.widgets.IconicTextView
+        android:id="@+id/tvPropertyMisc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/listing_right_padding"
+        android:layout_marginLeft="@dimen/list_left_padding"
+        android:layout_marginRight="@dimen/listing_right_padding"
+        android:layout_marginStart="@dimen/list_left_padding"
+        android:layout_marginTop="12dp"
+        android:gravity="start"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/tvAgent"
+        app:layout_constraintTop_toBottomOf="@id/tvProperty"
+        tools:text="1star" />
+
+</android.support.constraint.ConstraintLayout>
