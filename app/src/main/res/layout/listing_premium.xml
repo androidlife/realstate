@@ -74,7 +74,7 @@
         app:layout_constraintRight_toRightOf="parent"
         tools:text="GO1/36 Romsey Street\n Waitra" />
 
-    <au.com.sentia.test.widgets.IconicTextView
+    <au.com.sentia.test.screen.listing.widgets.IconicTextView
         android:id="@+id/tvProperty"
         android:layout_width="match_parent"
         android:layout_height="48dp"
@@ -87,7 +87,7 @@
         app:layout_constraintTop_toBottomOf="@id/viewBg"
         tools:text="2 Bedroom" />
 
-    <au.com.sentia.test.widgets.IconicTextView
+    <au.com.sentia.test.screen.listing.widgets.IconicTextView
         android:id="@+id/tvStar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

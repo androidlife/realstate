@@ -1,9 +1,9 @@
-package au.com.sentia.test.widgets
+package au.com.sentia.test.screen.listing.widgets
 
 import android.content.Context
 import android.util.AttributeSet
 import android.widget.TextView
-import au.com.sentia.test.Injection
+import au.com.sentia.test.utils.Injection
 
 class IconicTextView : TextView {
     constructor(context: Context) : this(context, null)

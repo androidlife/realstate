@@ -1,6 +1,7 @@
-package au.com.sentia.test
+package au.com.sentia.test.utils
 
-import au.com.sentia.test.utils.FontProvider
+import au.com.sentia.test.MainApplication
+import au.com.sentia.test.R
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
 

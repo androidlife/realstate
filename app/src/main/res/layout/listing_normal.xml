@@ -55,7 +55,7 @@
         app:layout_constraintTop_toBottomOf="@id/ivProperty"
         tools:text="$50000" />
 
-    <au.com.sentia.test.widgets.IconicTextView
+    <au.com.sentia.test.screen.listing.widgets.IconicTextView
         android:id="@+id/tvPropertyMisc"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

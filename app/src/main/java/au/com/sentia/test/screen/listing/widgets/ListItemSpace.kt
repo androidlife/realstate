@@ -1,4 +1,4 @@
-package au.com.sentia.test.screen
+package au.com.sentia.test.screen.listing.widgets
 
 import android.graphics.Rect
 import android.support.v7.widget.RecyclerView

@@ -1,10 +1,10 @@
-package au.com.sentia.test.widgets
+package au.com.sentia.test.screen.listing.widgets
 
 import android.support.v7.widget.RecyclerView
 import android.view.View
-import au.com.sentia.test.Injection
+import au.com.sentia.test.utils.Injection
 import au.com.sentia.test.R
-import au.com.sentia.test.ResProvider
+import au.com.sentia.test.utils.ResProvider
 import au.com.sentia.test.model.Property
 import com.bumptech.glide.Glide
 import kotlinx.android.extensions.LayoutContainer
