@@ -8,12 +8,12 @@ import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import au.com.sentia.test.R
-import au.com.sentia.test.R.id.rvProperties
 import au.com.sentia.test.model.Property
 import au.com.sentia.test.screen.details.DetailActivity
 import au.com.sentia.test.screen.details.DetailFragment
 import au.com.sentia.test.screen.listing.widgets.ListItemSpace
 import au.com.sentia.test.screen.listing.widgets.PropertiesAdapter
+import au.com.sentia.test.utils.Injection
 import au.com.sentia.test.utils.events.EventClick
 import au.com.sentia.test.utils.events.RxBus
 import io.reactivex.disposables.Disposable
@@ -28,9 +28,13 @@ class ListingActivity : AppCompatActivity(), ListContract.View {
     private lateinit var listAdapter: PropertiesAdapter
     private lateinit var detailFragment: DetailFragment
     private lateinit var clickListener: Disposable
+    private lateinit var listing: List<Property>
+
+    private lateinit var presenter: ListContract.Presenter
 
     private val VIEW_STATE: String = "viewState"
     private val SELECTED_INDEX: String = "selectedIndex"
+    private val LIST: String = "list"
     private var selectedIndex: Int = 0
 
 
@@ -38,6 +42,8 @@ class ListingActivity : AppCompatActivity(), ListContract.View {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_listing)
         initViews()
+
+        presenter = ListPresenter(this, Injection.listModel)
     }
 
     private fun initViews() {
@@ -52,6 +58,7 @@ class ListingActivity : AppCompatActivity(), ListContract.View {
         val bottom = resources.getDimensionPixelSize(R.dimen.row_space_bottom)
         val listItemSpace = ListItemSpace(left, top, right, bottom)
         rvProperties.addItemDecoration(listItemSpace)
+
     }
 
     override fun isShowingTwoPanes(): Boolean {
@@ -61,17 +68,20 @@ class ListingActivity : AppCompatActivity(), ListContract.View {
     override fun onPause() {
         super.onPause()
         listenToClick(false)
+        presenter.start(false)
     }
 
     override fun onResume() {
         super.onResume()
         listenToClick(true)
+        presenter.start(true)
     }
 
     override fun onSaveInstanceState(outState: Bundle?, outPersistentState: PersistableBundle?) {
         super.onSaveInstanceState(outState, outPersistentState)
         outState?.putString(VIEW_STATE, viewState.name)
         outState?.putInt(SELECTED_INDEX, selectedIndex)
+        outState?.putParcelableArrayList(LIST, ArrayList(listing))
     }
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
@@ -79,6 +89,7 @@ class ListingActivity : AppCompatActivity(), ListContract.View {
         if (savedInstanceState != null && savedInstanceState.containsKey(VIEW_STATE)) {
             viewState = ListContract.View.ViewState.valueOf(savedInstanceState.getString(VIEW_STATE))
             selectedIndex = savedInstanceState.getInt(SELECTED_INDEX)
+            listing = savedInstanceState.getParcelableArrayList(LIST)
         }
     }
 
@@ -111,8 +122,13 @@ class ListingActivity : AppCompatActivity(), ListContract.View {
     }
 
     override fun setData(listing: List<Property>) {
+        this.listing = listing
         listAdapter = PropertiesAdapter(listing)
         rvProperties.adapter = listAdapter
+    }
+
+    override fun getFetchedListing(): List<Property> {
+        return listing
     }
 
     override fun showListingDetail(property: Property) =

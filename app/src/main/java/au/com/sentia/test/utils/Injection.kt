@@ -2,6 +2,9 @@ package au.com.sentia.test.utils
 
 import au.com.sentia.test.MainApplication
 import au.com.sentia.test.R
+import au.com.sentia.test.network.provider.ApiManager
+import au.com.sentia.test.screen.listing.ListContract
+import au.com.sentia.test.screen.listing.ListModel
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
 
@@ -22,6 +25,8 @@ object Injection {
             .centerCrop()
             .diskCacheStrategy(DiskCacheStrategy.ALL)
             .placeholder(R.drawable.placeholder)
+
+    val listModel: ListContract.Model = ListModel(ApiManager.apiService)
 
 
 }

@@ -3,7 +3,6 @@ package au.com.sentia.test.screen.listing
 import au.com.sentia.test.model.Error
 import au.com.sentia.test.model.Properties
 import au.com.sentia.test.model.Property
-import io.reactivex.disposables.Disposable
 
 class ListPresenter(val view: ListContract.View, val model: ListContract.Model) : ListContract.Presenter {
 
@@ -20,6 +19,7 @@ class ListPresenter(val view: ListContract.View, val model: ListContract.Model) 
             ListContract.View.ViewState.Error -> view.showError(true)
             ListContract.View.ViewState.Loaded -> {
                 val selectedIndex = view.getSelectedIndex()
+                view.setData(view.getFetchedListing())
                 view.scrollToIndex(selectedIndex)
                 if (view.isShowingTwoPanes())
                     onListingSelected(view.getSelectedProperty(selectedIndex))

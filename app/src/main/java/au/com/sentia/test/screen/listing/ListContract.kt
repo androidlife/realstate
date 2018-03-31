@@ -26,6 +26,7 @@ interface ListContract {
         fun getSelectedIndex(): Int
         fun isShowingTwoPanes(): Boolean
         fun getSelectedProperty(index: Int): Property
+        fun getFetchedListing(): List<Property>
     }
 
     interface Presenter {
