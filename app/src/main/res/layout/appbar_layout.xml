@@ -33,6 +33,7 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:theme="@style/ThemeOverlay.AppCompat.Light"
-            app:layout_collapseMode="pin" />
+            app:layout_collapseMode="pin"
+            app:title="Properties" />
     </android.support.design.widget.CollapsingToolbarLayout>
 </android.support.design.widget.AppBarLayout>
