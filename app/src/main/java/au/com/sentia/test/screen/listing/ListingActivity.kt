@@ -18,7 +18,7 @@ import au.com.sentia.test.utils.events.EventClick
 import au.com.sentia.test.utils.events.RxBus
 import io.reactivex.disposables.Disposable
 import kotlinx.android.synthetic.main.activity_listing.*
-import kotlinx.android.synthetic.main.list.*
+import kotlinx.android.synthetic.main.listing.*
 
 class ListingActivity : AppCompatActivity(), ListContract.View {
 
@@ -57,7 +57,7 @@ class ListingActivity : AppCompatActivity(), ListContract.View {
         val top = resources.getDimensionPixelSize(R.dimen.row_space_top)
         val bottom = resources.getDimensionPixelSize(R.dimen.row_space_bottom)
         val listItemSpace = ListItemSpace(left, top, right, bottom)
-        //rvProperties.addItemDecoration(listItemSpace)
+        rvProperties.addItemDecoration(listItemSpace)
 
     }
 

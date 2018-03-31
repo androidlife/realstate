@@ -4,7 +4,7 @@
     <dimen name="list_left_padding">12dp</dimen>
     <dimen name="image_height_premium">280dp</dimen>
     <dimen name="image_height_normal">250dp</dimen>
-    <dimen name="image_agent_normal_top_margin">240dp</dimen>
+    <dimen name="image_agent_normal_top_margin">217dp</dimen>
     <dimen name="image_agent">65dp</dimen>
     <dimen name="image_agent_resize">45dp</dimen>
     <dimen name="image_resize_width">180dp</dimen>

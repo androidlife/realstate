@@ -22,7 +22,7 @@ object Injection {
     val imageOptions: RequestOptions = RequestOptions()
             .override(ResProvider.getDimension(R.dimen.image_resize_width),
                     ResProvider.getDimension(R.dimen.image_resize_height))
-            .centerCrop()
+            .fitCenter()
             .diskCacheStrategy(DiskCacheStrategy.ALL)
             .placeholder(R.drawable.placeholder)
 
