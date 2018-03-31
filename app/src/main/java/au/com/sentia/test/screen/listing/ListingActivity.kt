@@ -57,7 +57,7 @@ class ListingActivity : AppCompatActivity(), ListContract.View {
         val top = resources.getDimensionPixelSize(R.dimen.row_space_top)
         val bottom = resources.getDimensionPixelSize(R.dimen.row_space_bottom)
         val listItemSpace = ListItemSpace(left, top, right, bottom)
-        rvProperties.addItemDecoration(listItemSpace)
+        //rvProperties.addItemDecoration(listItemSpace)
 
     }
 
