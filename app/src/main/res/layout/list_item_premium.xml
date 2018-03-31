@@ -16,7 +16,7 @@
         android:id="@+id/viewBg"
         android:layout_width="match_parent"
         android:layout_height="42dp"
-        android:background="#1d394a"
+        android:background="#ff9800"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ivProperty" />
 
