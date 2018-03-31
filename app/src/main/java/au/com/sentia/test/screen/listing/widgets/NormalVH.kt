@@ -8,8 +8,8 @@ import au.com.sentia.test.utils.ResProvider
 import au.com.sentia.test.model.Property
 import com.bumptech.glide.Glide
 import kotlinx.android.extensions.LayoutContainer
-import kotlinx.android.synthetic.main.listing_normal.*
-import kotlinx.android.synthetic.main.listing_normal.view.*
+import kotlinx.android.synthetic.main.list_item_normal.*
+import kotlinx.android.synthetic.main.list_item_normal.view.*
 
 class NormalVH(override val containerView: View) : RecyclerView.ViewHolder(containerView),
         LayoutContainer {

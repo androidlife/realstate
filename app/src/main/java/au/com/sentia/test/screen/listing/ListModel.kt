@@ -6,7 +6,7 @@ import au.com.sentia.test.network.provider.ApiService
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
-class ListModel(val apiService: ApiService) : ListContract.Model {
+class ListModel(private val apiService: ApiService) : ListContract.Model {
     private var cancel: Boolean = false
     override fun cancel(cancel: Boolean) {
         this.cancel = cancel
@@ -23,13 +23,13 @@ class ListModel(val apiService: ApiService) : ListContract.Model {
                         })
     }
 
-    fun onSuccess(properties: Properties, listener: ListContract.OnPropertiesFetchListener) {
+    private fun onSuccess(properties: Properties, listener: ListContract.OnPropertiesFetchListener) {
         if (cancel)
             return
         listener.onFetchSuccess(properties)
     }
 
-    fun onFailure(error: Error, listener: ListContract.OnPropertiesFetchListener) {
+    private fun onFailure(error: Error, listener: ListContract.OnPropertiesFetchListener) {
         if (cancel)
             return
         listener.onFetchFailure(error)

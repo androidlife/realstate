@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">SentiaT</string>
+    <string name="info_tap_to_retry">Tap to retry !</string>
 </resources>

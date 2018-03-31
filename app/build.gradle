@@ -43,6 +43,8 @@ dependencies {
     implementation "com.android.support:recyclerview-v7:$supportlib_version"
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
 
+    implementation "com.android.support:design:$supportlib_version"
+
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
     implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
     implementation 'com.squareup.okhttp3:logging-interceptor:3.8.0'

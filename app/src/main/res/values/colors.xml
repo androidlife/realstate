@@ -9,4 +9,6 @@
     <color name="card_background_color">#E7E7E7</color>
     <color name="white">@android:color/white</color>
     <color name="black">@android:color/black</color>
+    <color name="black_70">#77010101</color>
+
 </resources>

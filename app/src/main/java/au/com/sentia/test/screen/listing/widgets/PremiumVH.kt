@@ -8,8 +8,8 @@ import au.com.sentia.test.utils.ResProvider
 import au.com.sentia.test.model.Property
 import com.bumptech.glide.Glide
 import kotlinx.android.extensions.LayoutContainer
-import kotlinx.android.synthetic.main.listing_premium.*
-import kotlinx.android.synthetic.main.listing_premium.view.*
+import kotlinx.android.synthetic.main.list_item_premium.*
+import kotlinx.android.synthetic.main.list_item_premium.view.*
 
 class PremiumVH(override val containerView: View) : RecyclerView.ViewHolder(containerView), LayoutContainer {
     fun bindPremium(property: Property) {

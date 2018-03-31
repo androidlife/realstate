@@ -22,14 +22,14 @@ class PropertiesAdapter(val listing: List<Property>) : RecyclerView.Adapter<Recy
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return when (viewType) {
             TYPE_PREMIUM ->
-                PremiumVH(getViewFrom(parent, R.layout.listing_premium))
+                PremiumVH(getViewFrom(parent, R.layout.list_item_premium))
             else ->
-                NormalVH(getViewFrom(parent, R.layout.listing_normal))
+                NormalVH(getViewFrom(parent, R.layout.list_item_normal))
 
         }
     }
 
-    fun getViewFrom(parent: ViewGroup, layout: Int): View = LayoutInflater.from(parent.context)
+    private fun getViewFrom(parent: ViewGroup, layout: Int): View = LayoutInflater.from(parent.context)
             .inflate(layout, parent, false)
 
     override fun getItemCount(): Int {
