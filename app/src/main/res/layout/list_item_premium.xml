@@ -9,6 +9,7 @@
         android:id="@+id/ivProperty"
         android:layout_width="match_parent"
         android:layout_height="@dimen/image_height_premium"
+        android:background="@color/black_70"
         tools:background="@android:color/black" />
 
     <View
@@ -16,14 +17,16 @@
         android:layout_width="match_parent"
         android:layout_height="42dp"
         android:background="#1d394a"
-        app:layout_constraintBottom_toBottomOf="@id/ivProperty"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivProperty" />
 
     <ImageView
         android:id="@+id/ivAgent"
         android:layout_width="@dimen/image_agent"
         android:layout_height="@dimen/image_agent"
-        app:layout_constraintBottom_toBottomOf="@id/ivProperty"
+        android:layout_marginLeft="@dimen/image_agent_margin"
+        android:layout_marginStart="@dimen/image_agent_margin"
+        app:layout_constraintBottom_toBottomOf="@id/viewBg"
         app:layout_constraintLeft_toLeftOf="parent"
         tools:background="@android:color/white" />
 
@@ -34,9 +37,10 @@
         android:layout_marginBottom="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginStart="10dp"
+        android:fontFamily="sans-serif"
         android:textColor="@android:color/white"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@id/ivProperty"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="@id/viewBg"
         app:layout_constraintLeft_toRightOf="@id/ivAgent"
         tools:text="Anika Wood" />
 
@@ -51,8 +55,9 @@
         android:layout_marginStart="8dp"
         android:gravity="end"
         android:textColor="@color/white"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="@id/ivProperty"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/viewBg"
         app:layout_constraintLeft_toRightOf="@id/tvAgent"
         app:layout_constraintRight_toRightOf="parent"
         tools:text="$50000" />
@@ -61,14 +66,19 @@
         android:id="@+id/tvLocation"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="1dp"
         android:layout_marginEnd="@dimen/listing_right_padding"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="@dimen/listing_right_padding"
         android:layout_marginStart="10dp"
         android:gravity="end|bottom"
+        android:shadowColor="@color/black"
+        android:shadowDx="1"
+        android:shadowDy="0.5"
+        android:shadowRadius="0.01"
         android:textColor="@color/white"
-        android:textSize="17sp"
+        android:textSize="16sp"
+        android:typeface="sans"
         app:layout_constraintBottom_toTopOf="@id/viewBg"
         app:layout_constraintLeft_toRightOf="@id/ivAgent"
         app:layout_constraintRight_toRightOf="parent"
@@ -77,12 +87,14 @@
     <au.com.sentia.test.screen.listing.widgets.IconicTextView
         android:id="@+id/tvProperty"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
+        android:layout_height="50dp"
         android:layout_marginTop="1dp"
         android:background="@drawable/premium_bottom_bg"
         android:gravity="start|center_vertical"
         android:paddingLeft="15dp"
         android:paddingRight="15dp"
+        android:textColor="@color/black_70"
+        android:textSize="17sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/viewBg"
         tools:text="2 Bedroom" />
@@ -93,7 +105,9 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/listing_right_padding"
         android:layout_marginRight="@dimen/listing_right_padding"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="18dp"
+        android:textColor="@color/black_70"
+        android:textSize="17sp"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/viewBg"
         tools:text="1star" />

@@ -19,8 +19,10 @@ class PremiumVH(override val containerView: View) : ListVH(containerView) {
 
     fun bindPremium(index: Int, property: Property) {
         updateValues(index, property)
-        containerView.tvAgent.text = property.owner.firstName.plus(property.owner.lastName)
-        containerView.tvPrice.text = property.price.toString()
+        containerView.tvAgent.text = property.owner.firstName
+                .plus(" ")
+                .plus(property.owner.lastName)
+        containerView.tvPrice.text = "$ ".plus(property.price.toString())
         containerView.tvLocation.text = property.location.address1
                 .plus("\n")
                 .plus(property.location.address2)
@@ -33,15 +35,15 @@ class PremiumVH(override val containerView: View) : ListVH(containerView) {
                 .load(property.photo.imageLink.url)
                 .into(ivProperty)
         containerView.tvProperty.text = ResProvider.getStringFromRes(R.string.icon_bed)
-                .plus(" ")
+                .plus(spaces)
                 .plus(property.bedrooms)
-                .plus(" ")
+                .plus(spaces)
                 .plus(ResProvider.getStringFromRes(R.string.icon_bath))
-                .plus(" ")
+                .plus(spaces)
                 .plus(property.bathrooms)
-                .plus(" ")
+                .plus(spaces)
                 .plus(ResProvider.getStringFromRes(R.string.icon_car))
-                .plus(" ")
+                .plus(spaces)
                 .plus(property.carspots)
         val star: String = ResProvider.getStringFromRes(R.string.icon_star)
         containerView.tvStar.text = star
