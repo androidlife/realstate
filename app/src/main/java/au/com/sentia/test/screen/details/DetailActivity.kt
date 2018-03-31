@@ -8,6 +8,8 @@ import au.com.sentia.test.R
 import au.com.sentia.test.model.Extras
 import au.com.sentia.test.model.Property
 import au.com.sentia.test.screen.listing.ListContract
+import com.bumptech.glide.Glide
+import kotlinx.android.synthetic.main.activity_detail.*
 
 class DetailActivity : AppCompatActivity() {
 
@@ -25,9 +27,15 @@ class DetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
         property = intent.getParcelableExtra(Extras.PROPERTY)
+        Glide.with(this).load(property.photo.imageLink.url)
+                .into(ivBackdrop)
         supportFragmentManager.beginTransaction().replace(R.id.nsvContainer,
                 DetailFragment.getInstance(property)).commit()
+    }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        Glide.with(this).pauseRequests()
     }
 
 
