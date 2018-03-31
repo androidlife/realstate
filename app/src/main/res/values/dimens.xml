@@ -17,4 +17,6 @@
     <dimen name="row_space_bottom">12dp</dimen>
     <dimen name="row_space_left">10dp</dimen>
     <dimen name="row_space_right">10dp</dimen>
+
+    <dimen name="image_agent_margin">8dp</dimen>
 </resources>

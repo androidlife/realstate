@@ -5,12 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/premium_bottom_bg"
-    android:paddingBottom="18dp">
+    android:paddingBottom="18dp"
+    android:clickable="true">
 
     <ImageView
         android:id="@+id/ivProperty"
         android:layout_width="match_parent"
         android:layout_height="@dimen/image_height_normal"
+        android:background="@color/black_70"
         tools:background="@android:color/black" />
 
     <ImageView
@@ -20,6 +22,8 @@
         android:layout_marginTop="@dimen/image_agent_normal_top_margin"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginRight="@dimen/image_agent_margin"
+        android:layout_marginEnd="@dimen/image_agent_margin"
         tools:background="@android:color/white" />
 
     <TextView
@@ -33,7 +37,8 @@
         android:layout_marginTop="10dp"
         android:gravity="end"
         android:textColor="@color/black"
-        android:textSize="14sp"
+        android:fontFamily="sans-serif"
+        android:textSize="15sp"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ivAgent"
         tools:text="Anika Wood" />
@@ -42,7 +47,7 @@
         android:id="@+id/tvProperty"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="15dp"
         android:layout_marginEnd="@dimen/listing_right_padding"
         android:layout_marginLeft="@dimen/list_left_padding"
         android:layout_marginRight="@dimen/listing_right_padding"
@@ -63,7 +68,9 @@
         android:layout_marginLeft="@dimen/list_left_padding"
         android:layout_marginRight="@dimen/listing_right_padding"
         android:layout_marginStart="@dimen/list_left_padding"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="16dp"
+        android:textSize="16sp"
+        android:textColor="@color/black_70"
         android:gravity="start"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@id/tvAgent"

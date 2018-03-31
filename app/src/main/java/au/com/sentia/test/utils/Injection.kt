@@ -1,5 +1,6 @@
 package au.com.sentia.test.utils
 
+import android.content.Context
 import au.com.sentia.test.MainApplication
 import au.com.sentia.test.R
 import au.com.sentia.test.network.provider.ApiManager
@@ -9,7 +10,7 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
 
 object Injection {
-    val fontProvider: FontProvider = FontProvider(MainApplication.context.assets)
+    val fontProvider: FontProvider = FontProvider(getContext().assets)
 
     val profileImageOptions: RequestOptions = RequestOptions()
             .override(ResProvider.getDimension(R.dimen.image_agent_resize),
@@ -27,6 +28,10 @@ object Injection {
             .placeholder(R.drawable.placeholder)
 
     val listModel: ListContract.Model = ListModel(ApiManager.apiService)
+
+    fun getContext(): Context {
+        return MainApplication.context
+    }
 
 
 }
