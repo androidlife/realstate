@@ -9,7 +9,7 @@ import io.reactivex.schedulers.Schedulers
 
 class ListModel(private val apiService: ApiService) : ListContract.Model {
     private var cancel: Boolean = false
-    private lateinit var apiCallback: Disposable
+    private var apiCallback: Disposable? = null
     override fun cancel(cancel: Boolean) {
         this.cancel = cancel
         if (this.cancel)

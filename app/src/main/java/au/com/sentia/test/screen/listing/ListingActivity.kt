@@ -28,7 +28,7 @@ class ListingActivity : AppCompatActivity(), ListContract.View {
     private lateinit var listAdapter: PropertiesAdapter
     private lateinit var detailFragment: DetailFragment
     private lateinit var clickListener: Disposable
-    private lateinit var listing: List<Property>
+    private var listing: List<Property> = ArrayList(0)
 
     private lateinit var presenter: ListContract.Presenter
 
@@ -78,8 +78,8 @@ class ListingActivity : AppCompatActivity(), ListContract.View {
         presenter.start(true)
     }
 
-    override fun onSaveInstanceState(outState: Bundle?, outPersistentState: PersistableBundle?) {
-        super.onSaveInstanceState(outState, outPersistentState)
+    override fun onSaveInstanceState(outState: Bundle?) {
+        super.onSaveInstanceState(outState)
         outState?.putString(VIEW_STATE, viewState.name)
         outState?.putInt(SELECTED_INDEX, selectedIndex)
         outState?.putParcelableArrayList(LIST, ArrayList(listing))
