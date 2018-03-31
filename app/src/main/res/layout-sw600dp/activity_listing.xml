@@ -9,6 +9,7 @@
         android:id="@+id/listingView"
         android:layout_width="0dp"
         android:layout_height="match_parent"
+        layout="@layout/listing"
         app:layout_constraintEnd_toStartOf="@+id/detailContainer"
         app:layout_constraintHorizontal_chainStyle="spread"
         app:layout_constraintLeft_toLeftOf="parent"

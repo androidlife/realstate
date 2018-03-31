@@ -4,16 +4,21 @@ import android.support.v7.widget.RecyclerView
 import android.view.View
 import au.com.sentia.test.utils.Injection
 import au.com.sentia.test.R
+import au.com.sentia.test.R.id.ivAgent
+import au.com.sentia.test.R.id.ivProperty
 import au.com.sentia.test.utils.ResProvider
 import au.com.sentia.test.model.Property
+import au.com.sentia.test.utils.events.EventClick
+import au.com.sentia.test.utils.events.RxBus
 import com.bumptech.glide.Glide
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.list_item_normal.*
 import kotlinx.android.synthetic.main.list_item_normal.view.*
 
-class NormalVH(override val containerView: View) : RecyclerView.ViewHolder(containerView),
-        LayoutContainer {
-    fun bindNormal(property: Property) {
+class NormalVH(override val containerView: View) : ListVH(containerView) {
+
+    fun bindNormal(index: Int, property: Property) {
+        updateValues(index, property)
         Glide.with(containerView.context)
                 .setDefaultRequestOptions(Injection.imageOptions)
                 .load(property.photo.imageLink.url)
@@ -39,8 +44,7 @@ class NormalVH(override val containerView: View) : RecyclerView.ViewHolder(conta
                 .plus(ResProvider.getStringFromRes(R.string.icon_car))
                 .plus(" ")
                 .plus(property.carspots)
-
-
+        addClickListener()
     }
 
 }

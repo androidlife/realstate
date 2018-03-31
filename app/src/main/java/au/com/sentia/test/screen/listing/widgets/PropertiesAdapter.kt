@@ -13,9 +13,9 @@ class PropertiesAdapter(val listing: List<Property>) : RecyclerView.Adapter<Recy
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         if (holder is PremiumVH) {
-            holder.bindPremium(getItem(position))
+            holder.bindPremium(position, getItemAt(position))
         } else if (holder is NormalVH) {
-            holder.bindNormal(getItem(position))
+            holder.bindNormal(position, getItemAt(position))
         }
     }
 
@@ -37,13 +37,13 @@ class PropertiesAdapter(val listing: List<Property>) : RecyclerView.Adapter<Recy
     }
 
     override fun getItemViewType(position: Int): Int {
-        val property = getItem(position)
+        val property = getItemAt(position)
         if (property.isPremium)
             return TYPE_PREMIUM
         return TYPE_NORMAL
     }
 
-    private fun getItem(position: Int): Property {
+    fun getItemAt(position: Int): Property {
         return listing[position]
     }
 

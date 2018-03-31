@@ -2,12 +2,10 @@ package au.com.sentia.test.screen
 
 import android.support.test.rule.ActivityTestRule
 import android.support.test.runner.AndroidJUnit4
-import au.com.sentia.test.model.Property
 import au.com.sentia.test.screen.details.DetailActivity
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
-import org.mockito.Mockito
 
 
 @RunWith(AndroidJUnit4::class)
@@ -30,6 +28,5 @@ class DetailActivityTest {
 
     @Test
     fun dataPopulateTest() {
-
     }
 }

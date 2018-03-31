@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity
 import au.com.sentia.test.R
 import au.com.sentia.test.model.Extras
 import au.com.sentia.test.model.Property
+import au.com.sentia.test.screen.listing.ListContract
 
 class DetailActivity : AppCompatActivity() {
 
@@ -26,6 +27,7 @@ class DetailActivity : AppCompatActivity() {
         property = intent.getParcelableExtra(Extras.PROPERTY)
         supportFragmentManager.beginTransaction().replace(R.id.nsvContainer,
                 DetailFragment.getInstance(property)).commit()
+
     }
 
 
