@@ -148,6 +148,7 @@ class ListingActivity : AppCompatActivity(), ListContract.View {
     private fun onItemClick(event: Any) {
         if (event is EventClick) {
             selectedIndex = event.index
+            presenter.onListingSelected(event.property)
         }
     }
 

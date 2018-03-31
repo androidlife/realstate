@@ -10,6 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/image_height_premium"
         android:background="@color/black_70"
+        android:clickable="true"
         tools:background="@android:color/black" />
 
     <View

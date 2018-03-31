@@ -26,8 +26,8 @@ abstract class ListVH(override val containerView: View) :
         this.property = property
     }
 
-    fun addClickListener() {
-        containerView.setOnClickListener({ v -> RxBus.send(EventClick.onPropertyClicked(index, property)) })
+    fun onViewClicked() {
+        RxBus.send(EventClick.onPropertyClicked(index, property))
     }
 
 

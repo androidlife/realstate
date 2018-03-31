@@ -33,10 +33,4 @@ class DetailActivity : AppCompatActivity() {
                 DetailFragment.getInstance(property)).commit()
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        Glide.with(this).pauseRequests()
-    }
-
-
 }

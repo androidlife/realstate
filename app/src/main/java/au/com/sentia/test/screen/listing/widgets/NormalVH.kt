@@ -7,6 +7,8 @@ import au.com.sentia.test.utils.Injection
 import au.com.sentia.test.R
 import au.com.sentia.test.utils.ResProvider
 import au.com.sentia.test.model.Property
+import au.com.sentia.test.utils.events.EventClick
+import au.com.sentia.test.utils.events.RxBus
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.list_item_normal.*
 import kotlinx.android.synthetic.main.list_item_normal.view.*
@@ -41,7 +43,7 @@ class NormalVH(override val containerView: View) : ListVH(containerView) {
                 .plus(ResProvider.getStringFromRes(R.string.icon_car))
                 .plus(spaces)
                 .plus(property.carspots)
-        addClickListener()
+        containerView.ivProperty.setOnClickListener { v -> onViewClicked() }
     }
 
     private fun createPropertySSB() {

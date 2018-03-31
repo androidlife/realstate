@@ -1,17 +1,11 @@
 package au.com.sentia.test.screen.listing.widgets
 
-import android.support.v7.widget.RecyclerView
 import android.view.View
 import au.com.sentia.test.utils.Injection
 import au.com.sentia.test.R
-import au.com.sentia.test.R.id.ivAgent
-import au.com.sentia.test.R.id.ivProperty
 import au.com.sentia.test.utils.ResProvider
 import au.com.sentia.test.model.Property
-import au.com.sentia.test.utils.events.EventClick
-import au.com.sentia.test.utils.events.RxBus
 import com.bumptech.glide.Glide
-import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.list_item_premium.*
 import kotlinx.android.synthetic.main.list_item_premium.view.*
 
@@ -52,6 +46,6 @@ class PremiumVH(override val containerView: View) : ListVH(containerView) {
                 .plus(" ")
                 .plus(star)
 
-        addClickListener()
+        containerView.ivProperty.setOnClickListener({ v -> onViewClicked() })
     }
 }
