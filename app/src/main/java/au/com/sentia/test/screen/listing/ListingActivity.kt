@@ -44,6 +44,7 @@ class ListingActivity : AppCompatActivity(), ListContract.View {
         initViews()
 
         presenter = ListPresenter(this, Injection.listModel)
+        tvInfo.setOnClickListener({ _ -> presenter.retry() })
     }
 
     private fun initViews() {
