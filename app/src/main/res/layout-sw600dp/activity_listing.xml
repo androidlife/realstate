@@ -1,24 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/clMain"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <include
-        android:id="@+id/listingView"
         layout="@layout/listing"
-        android:layout_width="280dp"
-        android:layout_height="match_parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_width="300dp"
+        android:layout_height="match_parent" />
 
     <FrameLayout
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
         android:id="@+id/detailContainer"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        app:layout_constraintLeft_toRightOf="@+id/listingView"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>

@@ -25,7 +25,7 @@ class ListingActivity : AppCompatActivity(), ListContract.View {
     private var isTwoPane: Boolean = false
     private var viewState = ListContract.View.ViewState.Empty
     private lateinit var listAdapter: PropertiesAdapter
-    private lateinit var detailFragment: DetailFragment
+    private var detailFragment: DetailFragment? = null
     private lateinit var clickListener: Disposable
     private var listing: List<Property> = ArrayList(0)
 
@@ -137,10 +137,10 @@ class ListingActivity : AppCompatActivity(), ListContract.View {
     override fun showListingDetailInSamePane(property: Property) {
         if (detailFragment == null) {
             detailFragment = DetailFragment.getInstance(property)
-            supportFragmentManager.beginTransaction().add(R.id.nsvContainer, detailFragment)
+            supportFragmentManager.beginTransaction().add(R.id.detailContainer, detailFragment)
                     .commit()
         } else {
-            detailFragment.setNewProperty(property)
+            detailFragment?.setNewProperty(property)
         }
     }
 

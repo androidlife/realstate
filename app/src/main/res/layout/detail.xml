@@ -8,4 +8,4 @@
     android:scrollbars="vertical"
     android:textColor="@color/black_70"
     android:textSize="17sp"
-    tools:text="Just a demo way of showing the details"/>
+    tools:text="Just a demo way of showing the details" />
