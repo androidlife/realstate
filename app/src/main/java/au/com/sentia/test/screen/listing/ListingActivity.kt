@@ -3,7 +3,6 @@ package au.com.sentia.test.screen.listing
 import android.content.Context
 import android.net.ConnectivityManager
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
