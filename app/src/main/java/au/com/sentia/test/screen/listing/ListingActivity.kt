@@ -12,6 +12,7 @@ import au.com.sentia.test.screen.details.DetailActivity
 import au.com.sentia.test.screen.details.DetailFragment
 import au.com.sentia.test.screen.listing.widgets.ListItemSpace
 import au.com.sentia.test.screen.listing.widgets.PropertiesAdapter
+import au.com.sentia.test.utils.GeneralUtils
 import au.com.sentia.test.utils.Injection
 import au.com.sentia.test.utils.events.EventClick
 import au.com.sentia.test.utils.events.RxBus
@@ -115,10 +116,7 @@ class ListingActivity : AppCompatActivity(), ListContract.View {
     override fun getViewState(): ListContract.View.ViewState = viewState
 
     override fun isConnectedToNetwork(): Boolean {
-        val connectivityManager =
-                getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-        val networkInfo = connectivityManager.activeNetworkInfo
-        return networkInfo != null && networkInfo.isConnectedOrConnecting
+        return GeneralUtils.isConnectedToNetwork(this)
     }
 
     override fun setData(listing: List<Property>) {
