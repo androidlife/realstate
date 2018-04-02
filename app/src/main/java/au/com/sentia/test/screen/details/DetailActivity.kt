@@ -2,6 +2,7 @@ package au.com.sentia.test.screen.details
 
 import android.content.Context
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.MenuItem
@@ -10,6 +11,7 @@ import au.com.sentia.test.model.Extras
 import au.com.sentia.test.model.Property
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.activity_detail.*
+
 
 class DetailActivity : AppCompatActivity() {
 
@@ -30,6 +32,9 @@ class DetailActivity : AppCompatActivity() {
         Glide.with(this).load(property.photo.imageLink.url)
                 .into(ivBackdrop)
         setSupportActionBar(toolBar)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            ivBackdrop.transitionName = property.title
+        }
         supportActionBar?.title = property.title
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportFragmentManager.beginTransaction().replace(R.id.nsvContainer,

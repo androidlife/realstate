@@ -1,12 +1,12 @@
 package au.com.sentia.test.screen.listing
 
-import android.content.Context
-import android.net.ConnectivityManager
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
+import android.widget.ImageView
 import au.com.sentia.test.R
+import au.com.sentia.test.R.id.rvProperties
 import au.com.sentia.test.model.Property
 import au.com.sentia.test.screen.details.DetailActivity
 import au.com.sentia.test.screen.details.DetailFragment
@@ -14,11 +14,14 @@ import au.com.sentia.test.screen.listing.widgets.ListItemSpace
 import au.com.sentia.test.screen.listing.widgets.PropertiesAdapter
 import au.com.sentia.test.utils.GeneralUtils
 import au.com.sentia.test.utils.Injection
-import au.com.sentia.test.utils.events.EventClick
+import au.com.sentia.test.screen.listing.widgets.EventClick
 import au.com.sentia.test.utils.events.RxBus
 import io.reactivex.disposables.Disposable
 import kotlinx.android.synthetic.main.activity_listing.*
 import kotlinx.android.synthetic.main.listing.*
+import android.support.v4.view.ViewCompat
+import android.support.v4.app.ActivityOptionsCompat
+
 
 class ListingActivity : AppCompatActivity(), ListContract.View {
 
@@ -36,6 +39,7 @@ class ListingActivity : AppCompatActivity(), ListContract.View {
     private val SELECTED_INDEX: String = "selectedIndex"
     private val LIST: String = "list"
     private var selectedIndex: Int = 0
+    private lateinit var selectedImage: ImageView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -129,8 +133,14 @@ class ListingActivity : AppCompatActivity(), ListContract.View {
         return listing
     }
 
-    override fun showListingDetail(property: Property) =
-            startActivity(DetailActivity.getLaunchingIntent(this, property))
+    override fun showListingDetail(property: Property) {
+        val options = ActivityOptionsCompat.makeSceneTransitionAnimation(
+                this,
+                selectedImage,
+                ViewCompat.getTransitionName(selectedImage))
+        startActivity(DetailActivity.getLaunchingIntent(this, property), options.toBundle())
+
+    }
 
     override fun showListingDetailInSamePane(property: Property) {
         if (detailFragment == null) {
@@ -145,6 +155,7 @@ class ListingActivity : AppCompatActivity(), ListContract.View {
     private fun onItemClick(event: Any) {
         if (event is EventClick) {
             selectedIndex = event.index
+            selectedImage = event.iv
             presenter.onListingSelected(event.property)
         }
     }

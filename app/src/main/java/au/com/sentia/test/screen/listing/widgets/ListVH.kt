@@ -1,13 +1,11 @@
 package au.com.sentia.test.screen.listing.widgets
 
 import android.support.v7.widget.RecyclerView
-import android.text.style.TextAppearanceSpan
 import android.view.View
+import android.widget.ImageView
 import au.com.sentia.test.R
 import au.com.sentia.test.model.Property
-import au.com.sentia.test.utils.Injection
 import au.com.sentia.test.utils.ResProvider
-import au.com.sentia.test.utils.events.EventClick
 import au.com.sentia.test.utils.events.RxBus
 import kotlinx.android.extensions.LayoutContainer
 
@@ -26,8 +24,8 @@ abstract class ListVH(override val containerView: View) :
         this.property = property
     }
 
-    fun onViewClicked() {
-        RxBus.send(EventClick.onPropertyClicked(index, property))
+    fun onViewClicked(iv: ImageView) {
+        RxBus.send(EventClick.onPropertyClicked(index, property, iv))
     }
 
 

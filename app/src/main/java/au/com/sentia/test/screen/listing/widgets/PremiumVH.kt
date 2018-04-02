@@ -1,6 +1,10 @@
 package au.com.sentia.test.screen.listing.widgets
 
+import android.os.Build
+import android.support.annotation.RequiresApi
+import android.support.v4.view.ViewCompat
 import android.view.View
+import android.widget.ImageView
 import au.com.sentia.test.utils.Injection
 import au.com.sentia.test.R
 import au.com.sentia.test.utils.ResProvider
@@ -11,6 +15,7 @@ import kotlinx.android.synthetic.main.list_item_premium.view.*
 
 class PremiumVH(override val containerView: View) : ListVH(containerView) {
 
+    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     fun bindPremium(index: Int, property: Property) {
         updateValues(index, property)
         containerView.tvAgent.text = property.owner.firstName
@@ -46,6 +51,7 @@ class PremiumVH(override val containerView: View) : ListVH(containerView) {
                 .plus(" ")
                 .plus(star)
 
-        containerView.ivProperty.setOnClickListener({ v -> onViewClicked() })
+        ViewCompat.setTransitionName(containerView.ivProperty, property.title)
+        containerView.ivProperty.setOnClickListener({ v -> onViewClicked(v as ImageView) })
     }
 }
