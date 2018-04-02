@@ -25,7 +25,7 @@ abstract class ListVH(override val containerView: View) :
     }
 
     fun onViewClicked(iv: ImageView) {
-        RxBus.send(EventClick.onPropertyClicked(index, property, iv))
+        RxBus.send(EventClick(index, property, iv))
     }
 
 
