@@ -5,6 +5,8 @@ import au.com.sentia.test.model.Error
 import au.com.sentia.test.model.Properties
 import au.com.sentia.test.model.Property
 
+//Overall interaction that goes in ListActivity
+// separation of concerns of Model,View and Presenter
 interface ListContract {
 
     interface View {

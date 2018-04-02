@@ -9,6 +9,7 @@ import au.com.sentia.test.screen.listing.ListModel
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
 
+//this later can be replaced with DI library like Dagger2
 object Injection {
     val fontProvider: FontProvider = FontProvider(getContext().assets)
 
