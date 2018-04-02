@@ -16,7 +16,7 @@ object CustomViewMatchers {
 
         override fun matchesSafely(item: View?): Boolean {
             if (item is SwipeRefreshLayout) {
-                return item?.isRefreshing && item?.visibility == View.VISIBLE
+                return item?.visibility == View.VISIBLE
             }
             return false
         }
