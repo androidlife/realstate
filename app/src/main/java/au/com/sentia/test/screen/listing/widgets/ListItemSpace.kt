@@ -13,10 +13,13 @@ class ListItemSpace(private val left: Int,
                                 parent: RecyclerView, state: RecyclerView.State?) {
         var position = parent.getChildAdapterPosition(view);
         if (position == RecyclerView.NO_POSITION)
-            return;
+            return
+        //this is for the bottom one where we want extra spacing to the bottom
         if (position == parent.adapter.itemCount.minus(1)) {
             outRect.set(left, top, right, bottom);
         } else {
+            //for the rest, we don't want extra spacing at the bottom
+            //the spacing of top would be enough
             outRect.set(left, top, right, 0);
         }
     }

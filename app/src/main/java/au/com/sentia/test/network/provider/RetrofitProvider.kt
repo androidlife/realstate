@@ -1,8 +1,7 @@
 package au.com.sentia.test.network.provider
 
 import au.com.sentia.test.BuildConfig
-import au.com.sentia.test.network.Api
-import okhttp3.Interceptor
+import au.com.sentia.test.network.URL_BASE
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -18,9 +17,9 @@ object RetrofitProvider {
         builder.connectTimeout(1, TimeUnit.MINUTES)
         builder.readTimeout(1, TimeUnit.MINUTES)
         if (BuildConfig.DEBUG)
-            builder.addInterceptor(Interceptors.getLoggingInterceptor(HttpLoggingInterceptor.Level.BODY))
+            builder.addInterceptor(getLoggingInterceptor(HttpLoggingInterceptor.Level.BODY))
         retrofit = Retrofit.Builder()
-                .baseUrl(Api.URL_BASE)
+                .baseUrl(URL_BASE)
                 .client(builder.build())
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())

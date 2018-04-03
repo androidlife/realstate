@@ -52,6 +52,7 @@ class ListingActivity : AppCompatActivity(), ListContract.View {
     }
 
     private fun initViews() {
+        setSupportActionBar(toolBar)
         isTwoPane = detailContainer != null
         swipeRefLayout.isEnabled = false
         val linearLayoutManager = LinearLayoutManager(this)
@@ -145,7 +146,7 @@ class ListingActivity : AppCompatActivity(), ListContract.View {
     override fun showListingDetailInSamePane(property: Property) {
         if (detailFragment == null) {
             detailFragment = DetailFragment.getInstance(property)
-            supportFragmentManager.beginTransaction().add(R.id.detailContainer, detailFragment)
+            supportFragmentManager.beginTransaction().replace(R.id.detailContainer, detailFragment)
                     .commit()
         } else {
             detailFragment?.setNewProperty(property)

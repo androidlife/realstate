@@ -14,16 +14,14 @@ object Injection {
     val fontProvider: FontProvider = FontProvider(getContext().assets)
 
     val profileImageOptions: RequestOptions = RequestOptions()
-            .override(ResProvider.getDimension(R.dimen.image_agent_resize),
-                    ResProvider.getDimension(R.dimen.image_agent_resize))
+            .override(ResProvider.getDimension(R.dimen.image_agent_resize), ResProvider.getDimension(R.dimen.image_agent_resize))
             .circleCrop()
             .diskCacheStrategy(DiskCacheStrategy.ALL)
             .error(R.drawable.ic_person)
             .placeholder(R.drawable.ic_person)
 
     val imageOptions: RequestOptions = RequestOptions()
-            .override(ResProvider.getDimension(R.dimen.image_resize_width),
-                    ResProvider.getDimension(R.dimen.image_resize_height))
+            .override(ResProvider.getDimension(R.dimen.image_resize_width), ResProvider.getDimension(R.dimen.image_resize_height))
             .fitCenter()
             .diskCacheStrategy(DiskCacheStrategy.ALL)
             .placeholder(R.drawable.placeholder)

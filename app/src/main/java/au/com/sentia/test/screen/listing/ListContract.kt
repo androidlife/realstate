@@ -14,7 +14,6 @@ interface ListContract {
             Empty, Error, Loaded
         }
 
-
         fun getViewState(): ViewState
         fun setViewState(viewViewState: ViewState)
         fun showError(show: Boolean)

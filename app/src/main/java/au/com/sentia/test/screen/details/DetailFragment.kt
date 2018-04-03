@@ -7,7 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import au.com.sentia.test.R
-import au.com.sentia.test.model.Extras
+import au.com.sentia.test.model.PROPERTY
 import au.com.sentia.test.model.Property
 import kotlinx.android.synthetic.main.detail.*
 
@@ -18,7 +18,7 @@ class DetailFragment : Fragment() {
         fun getInstance(property: Property): DetailFragment {
             val detailFragment = DetailFragment()
             val args = Bundle()
-            args.putParcelable(Extras.PROPERTY, property)
+            args.putParcelable(PROPERTY, property)
             detailFragment.arguments = args
             return detailFragment
         }
@@ -30,7 +30,7 @@ class DetailFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         tvDetail.movementMethod = ScrollingMovementMethod()
-        setNewProperty(arguments.getParcelable(Extras.PROPERTY))
+        setNewProperty(arguments.getParcelable(PROPERTY))
     }
 
     fun setNewProperty(property: Property) {
